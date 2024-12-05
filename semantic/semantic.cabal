@@ -106,7 +106,7 @@ library
   -- as caret-operator bounds relative to a version in Stackage.
   -- These are currently pinned to lts-13.13.
   build-depends:
-    , aeson >= 1.4.2.0 && < 3
+    , aeson == 2.0.0.0
     , algebraic-graphs >= 0.3 && < 0.7
     , ansi-terminal >= 0.8.2 && <1
     , async ^>= 2.2.1

@@ -1,36 +1,103 @@
 cradle:
   cabal:
-    - path: "semantic"
+    - path: "semantic/src"
       component: "lib:semantic"
-    - path: "semantic-analysis"
+
+    - path: "semantic/app/Main.hs"
+      component: "semantic:exe:semantic"
+
+    - path: "semantic/test"
+      component: "semantic:test:test"
+
+    - path: "semantic/test"
+      component: "semantic:test:parse-examples"
+
+    - path: "semantic/bench/Main.hs"
+      component: "semantic:bench:benchmarks"
+
+    - path: "semantic/bench/Tagging.hs"
+      component: "semantic:bench:benchmarks"
+
+    - path: "semantic-analysis/src"
       component: "lib:semantic-analysis"
-    - path: "semantic-ast"
+
+    - path: "semantic-ast/src"
       component: "lib:semantic-ast"
-    - path: "semantic-codeql"
+
+    - path: "semantic-codeql/src"
       component: "lib:semantic-codeql"
-    - path: "semantic-go"
+
+    - path: "semantic-codeql/test"
+      component: "semantic-codeql:test:test"
+
+    - path: "semantic-go/src"
       component: "lib:semantic-go"
-    - path: "semantic-java"
+
+    - path: "semantic-go/test"
+      component: "semantic-go:test:test"
+
+    - path: "semantic-java/src"
       component: "lib:semantic-java"
-    - path: "semantic-json"
+
+    - path: "semantic-java/test"
+      component: "semantic-java:test:test"
+
+    - path: "semantic-json/src"
       component: "lib:semantic-json"
-    - path: "semantic-parse"
-      component: "lib:semantic-parse"
-    - path: "semantic-php"
+
+    - path: "semantic-json/test"
+      component: "semantic-json:test:test"
+
+    - path: "semantic-parse/app/Main.hs"
+      component: "semantic-parse:exe:semantic-parse"
+
+    - path: "semantic-php/src"
       component: "lib:semantic-php"
-    - path: "semantic-python"
+
+    - path: "semantic-proto/src"
+      component: "lib:semantic-proto"
+
+    - path: "semantic-python/src"
       component: "lib:semantic-python"
-    - path: "semantic-ruby"
+
+    - path: "semantic-python/test"
+      component: "semantic-python:test:test"
+
+    - path: "semantic-python/bench/Bench.hs"
+      component: "semantic-python:exe:benchmark"
+
+    - path: "semantic-ruby/src"
       component: "lib:semantic-ruby"
-    - path: "semantic-rust"
-      component: "lib:semantic-rust"
-    - path: "semantic-scope-graph"
+
+    - path: "semantic-ruby/test"
+      component: "semantic-ruby:test:test"
+
+    - path: "semantic-ruby/bench/Main.hs"
+      component: "semantic-ruby:exe:benchmarks"
+
+    - path: "semantic-ruby/bench/Parsing.hs"
+      component: "semantic-ruby:exe:benchmarks"
+
+    - path: "semantic-ruby/app/Main.hs"
+      component: "semantic-ruby:exe:tree-sitter-ruby"
+
+    - path: "semantic-scope-graph/src"
       component: "lib:semantic-scope-graph"
-    - path: "semantic-source"
-      component: "lib:semantic-source"
-    - path: "semantic-tags"
+
+    - path: "semantic-tags/src"
       component: "lib:semantic-tags"
-    - path: "semantic-tsx"
+
+    - path: "semantic-tags/test"
+      component: "semantic-tags:test:test"
+
+    - path: "semantic-tsx/src"
       component: "lib:semantic-tsx"
-    - path: "semantic-typescript"
+
+    - path: "semantic-tsx/test"
+      component: "semantic-tsx:test:test"
+
+    - path: "semantic-typescript/src"
       component: "lib:semantic-typescript"
+
+    - path: "semantic-typescript/test"
+      component: "semantic-typescript:test:test"
