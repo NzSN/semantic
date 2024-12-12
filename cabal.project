@@ -13,7 +13,7 @@ packages: semantic
           semantic-proto
           semantic-python
           semantic-ruby
-          semantic-rust
+          -- semantic-rust
           semantic-scope-graph
           semantic-tags
           semantic-tsx
