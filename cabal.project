@@ -18,3 +18,10 @@ packages: semantic
           semantic-tags
           semantic-tsx
           semantic-typescript
+
+
+source-repository-package
+  type: git
+  location: https://github.com/NzSN/haskell-tree-sitter.git
+  tag: 5aedb64e0ba4dd9c544b0636f67c081955e0ebe4
+  subdir: tree-sitter-wgsl
