@@ -1,0 +1,16 @@
+package(default_visibility = ["//visibility:public"])
+
+load(
+    "//:build/common.bzl",
+    "semantic_language_library",
+    "semantic_language_parsing_test",
+)
+
+semantic_language_library(
+    name = "semantic-typescript",
+    srcs = glob(["src/**/*.hs"]),
+    language = "wgsl",
+    nodetypes = "@tree-sitter-wgsl//:vendor/tree-sitter-wgsl/src/node-types.json",
+)
+
+semantic_language_parsing_test(language = "wgsl")

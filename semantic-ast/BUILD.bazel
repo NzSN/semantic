@@ -59,6 +59,7 @@ all_ts_deps = ["@tree-sitter-{name}".format(name = name) for name in [
     "rust",
     "tsx",
     "typescript",
+    "wgsl",
 ]]
 
 all_file_deps = ["@tree-sitter-{name}//:src/node-types.json".format(name = name) for name in [
@@ -72,6 +73,7 @@ all_file_deps = ["@tree-sitter-{name}//:src/node-types.json".format(name = name)
     "rust",
     "tsx",
     "typescript",
+    "wgsl",
 ]]
 
 haskell_binary(

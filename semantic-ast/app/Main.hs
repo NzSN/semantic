@@ -45,6 +45,7 @@ import qualified TreeSitter.QL as CodeQL (tree_sitter_ql)
 import qualified TreeSitter.Ruby as Ruby (tree_sitter_ruby)
 import qualified TreeSitter.TSX as TSX (tree_sitter_tsx)
 import qualified TreeSitter.TypeScript as TypeScript (tree_sitter_typescript)
+import qualified TreeSitter.Wgsl as Wgsl (tree_sitter_wgsl)
 
 -- As a special case, you can pass
 data Config = Config {language :: Text, rootdir :: FilePath}
@@ -82,6 +83,7 @@ pathForLanguage rf =
         JavaScript -> loc "tree-sitter-typescript/vendor/tree-sitter-typescript/typescript/src/node-types.json"
         JSX -> loc "tree-sitter-typescript/vendor/tree-sitter-typescript/src/tsx/node-types.json"
         Java -> loc "tree-sitter-java/vendor/tree-sitter-java/src/node-types.json"
+        Wgsl -> loc "tree-sitter-wgsl/vendor/tree-sitter-wgsl/src/node-types.json"
         other -> error ("Couldn't find path for " <> show other)
 
 targetForLanguage :: Language -> FilePath
@@ -97,6 +99,7 @@ targetForLanguage x =
         TSX -> go "tsx"
         JavaScript -> go "javascript"
         Java -> go "java"
+        Wgsl -> go "Wgsl"
         other -> error ("Couldn't find path for " <> show other)
 
 parserForLanguage :: Language -> Ptr TreeSitter.Language.Language
@@ -115,13 +118,14 @@ parserForLanguage = \case
   Ruby -> Ruby.tree_sitter_ruby
   TypeScript -> TypeScript.tree_sitter_typescript
   TSX -> TSX.tree_sitter_tsx
+  Wgsl -> Wgsl.tree_sitter_wgsl
 
 -- nodeTypesPathForLanguage :: Bazel.Runfiles -> Language -> FilePath
 -- nodeTypesPathForLanguage rf = \case
 --   CodeQL -> r
 
 validLanguages :: [Language]
-validLanguages = [CodeQL, Go, Java, PHP, Python, Ruby, TypeScript, TSX]
+validLanguages = [CodeQL, Go, Java, PHP, Python, Ruby, TypeScript, TSX, Wgsl]
 
 emit :: FilePath -> Language -> IO ()
 emit root lang = do

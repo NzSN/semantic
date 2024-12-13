@@ -18,6 +18,7 @@ packages: semantic
           semantic-tags
           semantic-tsx
           semantic-typescript
+          semantic-wgsl
 
 
 source-repository-package
